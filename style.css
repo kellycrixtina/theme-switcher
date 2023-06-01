@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+	--dark: #292C35;
+	--light: #F1F1F1;
+	--label: #111;
+}
+
+body {
+    background-color: var(--light);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    transition: background 0.2s linear;
+    overflow: hidden;
+}
+ 
+/* Dark */
+body.dark {
+    background: var(--dark);
+}
+  
+.checkbox {
+    display: none;
+    position: absolute;
+}
+  
+.label {
+    background-color: var(--label);
+    border-radius: 50px;
+    height: 50px;
+    width: 110px;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    transform: scale(1.5);  
+}
+    
+.label i {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.label i img {
+    height: 40px;
+    width: 40px;
+}
+
+.label .ball {
+    background-color: var(--light);
+    border-radius: 60px;
+    height: 44px;
+    width: 44px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+  
+.checkbox:checked + .label .ball {
+    transform: translateX(60px);
+}
+  
+
